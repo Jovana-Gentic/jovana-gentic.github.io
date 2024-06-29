@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jovana Gentić's Portfolio</title>
+    <meta
+      name="description"
+      content="I enjoy coding, and all tech-y things. Currently passionate about deep learning , web dev and on my way to master C and Linux programming. :)"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="media\JG.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  </head>
+
+  <body>
+    <div id="topnav">
+      <div id="tabs">
+        <a href="#intro">Intro</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+      </div>
+      <div id="socials">
+        <a
+          href="https://www.linkedin.com/in/jovana-genti%C4%87/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="media\linkedin_light.png"
+        /></a>
+        <a
+          href="https://github.com/Jovana-Gentic"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="media\github_light.png"
+        /></a>
+      </div>
+    </div>
+    <div id="grid">
+      <div id="intro">
+        <h1>
+          Hi,I'm<br />
+          Jovana.
+        </h1>
+        <div id="short-description-div">
+          <img src="media\jovana2.jpg" />
+          <p id="short-description">
+            I enjoy coding and all things tech. I am currently passionate about
+            <span>deep learning</span>, <span>web development</span>, and on my
+            way to mastering <span>C</span> and <span>Linux</span> programming.
+            :)
+          </p>
+        </div>
+        <p id="click-to-view-resume">Click to view resume</p>
+      </div>
+      <div id="skills">
+        <p class="title">Skills</p>
+        <div id="skills-icons">
+          <figure>
+            <img src="media\css.png" />
+            <figcaption>CSS/SCSS</figcaption>
+          </figure>
+          <figure>
+            <img src="media\html.png" />
+            <figcaption>HTML</figcaption>
+          </figure>
+          <figure>
+            <img src="media\js.png" />
+            <figcaption>JavaScript</figcaption>
+          </figure>
+          <figure>
+            <img src="media\react.png" />
+            <figcaption>React</figcaption>
+          </figure>
+          <figure>
+            <img src="media\git.png" />
+            <figcaption>Git</figcaption>
+          </figure>
+          <figure>
+            <img src="media\tf.png" />
+            <figcaption>TensorFlow</figcaption>
+          </figure>
+          <figure>
+            <img src="media\jax.png" />
+            <figcaption>JAX</figcaption>
+          </figure>
+
+          <figure>
+            <img src="media\pytorch.png" />
+            <figcaption>Pytorch</figcaption>
+          </figure>
+          <figure>
+            <img src="media\python.png" />
+            <figcaption>Python</figcaption>
+          </figure>
+
+          <figure>
+            <img src="media\java.png" />
+            <figcaption>Java</figcaption>
+          </figure>
+
+          <figure>
+            <img src="media\C.png" />
+            <figcaption>C</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div id="projects">
+        <p class="title">Projects</p>
+        <div id="my-projects">
+          <div class="project">
+            <p class="project-title">
+              <span class="symbol">[-]</span> Binary image classification
+            </p>
+            <a
+              href="https://github.com/Jovana-Gentic/Policemen_vs_civilians"
+              target="_blank"
+              rel="noopener"
+            >
+              link to project
+            </a>
+            <p class="description">
+              "Policemen vs Civilians" is an image classification model. I used
+              Convolutional Neural Networks (CNN) to create a binary classifier
+              on a small dataset (less than 400 samples) of both Serbian
+              policemen and civilians. This model is written in TensorFlow.
+            </p>
+            <br />
+            <ul>
+              <li><span style="color: gold">Here's what I learned:</span></li>
+              <li>
+                How neural networks work, hyperparameter tuning, loss functions,
+                activation functions etc.
+              </li>
+              <li>Working with image data (preprocessing, augmentation)</li>
+              <li>
+                Converting tf model to tf js model and uploading it on web
+              </li>
+              <li>Familiarity with TensorFlow and Python</li>
+            </ul>
+            <br />
+            <div class="demo">
+              <div class="imgload">
+                <label for="imageLoader">
+                  <input
+                    type="file"
+                    id="imageLoader"
+                    name="imageLoader"
+                    accept="image/*"
+                  />
+                  <span class="custom-file-button">Choose Image</span>
+                </label>
+                <img id="image" src="#" />
+                <p id="prediction">Prediction is:</p>
+              </div>
+              <pre
+                class="scrollable-div"
+              ><p>Check out implementation code here.</p><code class="language-javascript">let model;
+async function loadModel() {
+  try {
+    model = await tf.loadGraphModel("js/image_classification_model/model.json");
+    console.log("Model loaded successfully!");
+  } catch (error) {
+    console.error("Error loading model:", error);
+  }
+}
+loadModel();
+
+document
+  .getElementById("imageLoader")
+  .addEventListener("change", function (event) {
+    let reader = new FileReader();
+    reader.onload = function () {
+      let img = document.getElementById("image");
+      img.onload = async function () {
+        let tensor = tf.browser
+          .fromPixels(img)
+          .resizeNearestNeighbor([150, 150])
+          .toFloat()
+          .div(255)
+          .expandDims();
+
+        const predictionElement = document.getElementById("prediction");
+        predictionElement.style.display = "block";
+
+        const predictions = await model.predict(tensor).data();
+        let classification;
+        if (predictions.length) {
+          classification = Array.from(predictions)
+            .map((p) => (p > 0.75 ? "Policeman 👮‍♂️" : "Civilian 🧑"))
+            .join(", ");
+        } else {
+          classification = predictions > 0.75 ? "Policeman 👮‍♂️" : "Civilian 🧑";
+        }
+        predictionElement.innerText = "Prediction is: " + classification;
+      };
+      img.src = reader.result;
+      img.style.display = "block";
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</code></pre>
+            </div>
+          </div>
+
+          <div class="project">
+            <p class="project-title">
+              <span class="symbol">[-]</span> Multiclass audio classification
+            </p>
+            <a
+              href="https://github.com/Jovana-Gentic/Bird_song_classification"
+              target="_blank"
+              rel="noopener"
+            >
+              link to project
+            </a>
+            <p class="description">
+              "Bird song classification" is a TensorFlow-based audio
+              classification model designed to classify bird songs into five
+              distinct classes. Using 1D Convolutional Neural Networks (CNNs),
+              the model learns from a dataset containing 5422 bird songs.
+              Spectrograms are used as input features to capture the frequency
+              information from the audio signals.
+            </p>
+            <br />
+
+            <ul>
+              <li><span style="color: gold">Here's what I learned:</span></li>
+              <li>Working with audio data and spectrograms</li>
+              <li>Improving TensorFlow and Python skills</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <p class="project-title">
+              <span class="symbol">[-]</span> Text generation
+            </p>
+            <a
+              href="https://github.com/Jovana-Gentic/Text_generation_food_reviews"
+              target="_blank"
+              rel="noopener"
+            >
+              link to project
+            </a>
+            <p class="description">
+              "Text generation: Food reviews" is a small language model. I used
+              LSTMs, CNNs, and Transformers to learn to generate new reviews
+              based on the prompt.
+            </p>
+            <br />
+
+            <ul>
+              <li><span style="color: gold">Here's what I learned:</span></li>
+              <li>
+                Diving deeper into the architecture of CNNs, Transformers and
+                LSTMs
+              </li>
+              <li>Writing custom training loops</li>
+              <li>Working with text data (vocabularies, tokenization)</li>
+              <li>
+                Gaining a deeper understanding of language models and generative
+                AI
+              </li>
+              <li>Mastering TensorFlow and Python</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <p class="project-title">
+              <span class="symbol">[-]</span> VAE image generation
+            </p>
+            <a
+              href="https://github.com/Jovana-Gentic/VAE_celeba"
+              target="_blank"
+              rel="noopener"
+            >
+              link to project
+            </a>
+            <p class="description">
+              "VAE_celeba" is a multi-GPU implementation of a VAE in TensorFlow,
+              JAX, and PyTorch. This model learns latent representations of the
+              data, which are widely used in generative AI.
+            </p>
+            <br />
+
+            <ul>
+              <li><span style="color: gold">Here's what I learned:</span></li>
+              <li>Writing models in PyTorch and JAX, besides TensorFlow</li>
+              <li>
+                Creating custom models (without Sequential or Functional API),
+                and custom loss and accuracy functions
+              </li>
+              <li>Multiple GPU implementation</li>
+              <li>Understanding the math behind how everything works</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <p class="project-title">
+              <span class="symbol">[-]</span> Blob wars
+            </p>
+            <a
+              href="https://github.com/Jovana-Gentic/Pygame_Blob_Wars_2D"
+              target="_blank"
+              rel="noopener"
+            >
+              link to project
+            </a>
+            <p class="description">
+              "Blob Wars" is 2D two-player pygame. Objective is to control blobs
+              to fight and collect food to maintain health, gain bullets, and
+              shoot opponents.
+            </p>
+
+            <div class="video-container">
+              <video id="blob-game" controls>
+                <source src="media\game.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@TensorFlow/tfjs"></script>
+  </body>
+</html>
