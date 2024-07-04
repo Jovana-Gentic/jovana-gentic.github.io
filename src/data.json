@@ -1,0 +1,101 @@
+{
+  "projects": [
+    {
+      "title": "Binary image classification",
+      "link": "https://github.com/Jovana-Gentic/Policemen_vs_civilians",
+      "description": "Policemen vs Civilians is an image classification model. I used Convolutional Neural Networks (CNN) to create a binary classifier on a small dataset (less than 400 samples) of both Serbian policemen and civilians. This model is written in TensorFlow.",
+      "learned": [
+        "How neural networks work, hyperparameter tuning, loss functions, activation functions etc.",
+        "Working with image data (preprocessing, augmentation)",
+        "Converting tf model to tf js model and uploading it on web",
+        "TensorFlow and Python"
+      ],
+      "hasDemo": true,
+      "tfCode": "let model;\nasync function loadModel() {\n  try {\n    model = await tf.loadGraphModel(\"js/image_classification_model/model.json\");\n    console.log(\"Model loaded successfully!\");\n  } catch (error) {\n    console.error(\"Error loading model:\", error);\n  }\n}\nloadModel();\n\ndocument.getElementById(\"imageLoader\").addEventListener(\"change\", async function (event) {\n  let reader = new FileReader();\n  reader.onload = function () {\n    let img = document.getElementById(\"image\");\n    img.onload = async function () {\n      let tensor = tf.browser\n        .fromPixels(img)\n        .resizeNearestNeighbor([150, 150])\n        .toFloat()\n        .div(255)\n        .expandDims();\n\n      const predictionElement = document.getElementById(\"prediction\");\n      predictionElement.style.display = \"block\";\n\n      const predictions = await model.predict(tensor).data();\n      let classification;\n      if (predictions.length) {\n        classification = Array.from(predictions)\n          .map((p) => (p > 0.75 ? \"Policeman 👮‍♂️\" : \"Civilian 🧑\"))\n          .join(\", \");\n      } else {\n        classification = predictions > 0.75 ? \"Policeman 👮‍♂️\" : \"Civilian 🧑\";\n      }\n      predictionElement.innerText = \"Prediction is: \" + classification;\n    };\n    img.src = reader.result;\n    img.style.display = \"block\";\n  };\n  reader.readAsDataURL(event.target.files[0]);\n}"
+    },
+    {
+      "title": "Multiclass audio classification",
+      "link": "https://github.com/Jovana-Gentic/Bird_song_classification",
+      "description": "Bird song classification is a TensorFlow-based audio classification model designed to classify bird songs into five distinct classes. Using 1D Convolutional Neural Networks (CNNs), the model learns from a dataset containing 5422 bird songs. Spectrograms are used as input features to capture the frequency information from the audio signals.",
+      "learned": [
+        "Working with audio data and spectrograms",
+        "TensorFlow and Python"
+      ]
+    },
+    {
+      "title": "Text generation",
+      "link": "https://github.com/Jovana-Gentic/Text_generation_food_reviews",
+      "description": "Text generation: Food reviews is a small language model. I used LSTMs, CNNs, and Transformers to learn to generate new reviews based on the prompt.",
+      "learned": [
+        "Diving deeper into the architecture of CNNs, Transformers and LSTMs",
+        "Writing custom training loops",
+        "Working with text data (vocabularies, tokenization)",
+        "Gaining a deeper understanding of language models and generative AI",
+        "TensorFlow and Python"
+      ]
+    },
+    {
+      "title": "VAE image generation",
+      "link": "https://github.com/Jovana-Gentic/VAE_celeba",
+      "description": "VAE_celeba is a multi-GPU implementation of a VAE in TensorFlow, JAX, and PyTorch. This model learns latent representations of the data, which are widely used in generative AI.",
+      "learned": [
+        "Writing models in PyTorch and JAX, besides TensorFlow",
+        "Creating custom models (without Sequential or Functional API), and custom loss and accuracy functions",
+        "Multiple GPU implementation",
+        "Understanding the math behind how everything works"
+      ]
+    },
+    {
+      "title": "Blob wars",
+      "link": "https://github.com/Jovana-Gentic/Pygame_Blob_Wars_2D",
+      "description": "Blob Wars is 2D two-player pygame. Objective is to control blobs to fight and collect food to maintain health, gain bullets, and shoot opponents.",
+      "video": "/game.mp4"
+    }
+  ],
+  "skills": [
+    {
+      "imgSrc": "/css.png",
+      "caption": "CSS/SCSS"
+    },
+    {
+      "imgSrc": "/html.png",
+      "caption": "HTML"
+    },
+    {
+      "imgSrc": "/js.png",
+      "caption": "JavaScript"
+    },
+    {
+      "imgSrc": "/react.png",
+      "caption": "React"
+    },
+    {
+      "imgSrc": "/git.png",
+      "caption": "Git"
+    },
+    {
+      "imgSrc": "/tf.png",
+      "caption": "TensorFlow"
+    },
+    {
+      "imgSrc": "/jax.png",
+      "caption": "JAX"
+    },
+    {
+      "imgSrc": "/pytorch.png",
+      "caption": "Pytorch"
+    },
+    {
+      "imgSrc": "/python.png",
+      "caption": "Python"
+    },
+    {
+      "imgSrc": "/java.png",
+      "caption": "Java"
+    },
+    {
+      "imgSrc": "/C.png",
+      "caption": "C"
+    }
+  ]
+}
